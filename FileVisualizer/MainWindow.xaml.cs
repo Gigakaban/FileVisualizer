@@ -200,9 +200,19 @@ namespace FileVisualizer
                     y = a1;
                     if (int.TryParse(Number.Text, out int a2))
                     {
+                        if(x<32)
+                        {
+                            x = 32;
+                            X.Text = "32";
+                        }
+                        if (y < 32)
+                        {
+                            y = 32;
+                            Y.Text = "32";
+                        }
                         number = a2;
-                        im.Height = y * 2;
-                        im.Width = x * 2;
+                        im.Height = y ;
+                        im.Width = x ;
 
 
 
@@ -276,6 +286,10 @@ namespace FileVisualizer
             var bits = CreateBitArray(filecontent);
             double d = x / 8;
             int newc = (int)Math.Floor(d);
+            if(newc ==0)
+            {
+                newc = 1;
+            }
             int sl = 0;
             int sl1 = 0;
             for(int i =0;i!=bits.Length;i++)

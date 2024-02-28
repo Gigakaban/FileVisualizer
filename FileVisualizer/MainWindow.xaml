@@ -13,8 +13,8 @@
         <Button x:Name="vbutton" Content="Visualise" HorizontalAlignment="Left" Margin="450,98,0,0" VerticalAlignment="Top" Click="vbutton_Click"/>
         <Button x:Name="selbutton" Content="Select file" HorizontalAlignment="Left" Margin="383,162,0,0" VerticalAlignment="Top" Click="selbutton_Click"/>
         <Button x:Name="sbutton" Content="Save Dec" HorizontalAlignment="Left" Margin="361,240,0,0" VerticalAlignment="Top" Click="sbutton_Click"/>
-        <Label x:Name="lx" Content="Size Х" HorizontalAlignment="Left" Margin="307,29,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="ly"  Content="Size У" HorizontalAlignment="Left" Margin="307,69,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="lx" Content="Width" HorizontalAlignment="Left" Margin="307,29,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="ly"  Content="Height" HorizontalAlignment="Left" Margin="307,69,0,0" VerticalAlignment="Top"/>
         <Label x:Name="lnumber" Content="&#xD;&#xA;Number of bytes" HorizontalAlignment="Left" Margin="410,35,0,0" VerticalAlignment="Top"></Label>
         <Image x:Name="im" HorizontalAlignment="Left" Height="18" Margin="25,182,0,0" VerticalAlignment="Top" Width="13"/>
         <Label x:Name="sl" Content="" HorizontalAlignment="Left" Height="24" Margin="383,133,0,0" VerticalAlignment="Top" Width="417"/>
