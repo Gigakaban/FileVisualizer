@@ -41,6 +41,7 @@ namespace FileVisualizer
             lnumber.Visibility = Visibility.Hidden;
             vbutton.Visibility = Visibility.Hidden;
             sbutton.Visibility = Visibility.Hidden;
+            sbbutton.Visibility = Visibility.Hidden;
                 }
 
         static bool[] CreateBitArray(byte[] byteArray)
@@ -245,6 +246,7 @@ namespace FileVisualizer
                             BitmapSizeOptions.FromEmptyOptions());
                         im.Source = bitmapSource;
                         sbutton.Visibility = Visibility.Visible;
+                        sbbutton.Visibility = Visibility.Visible;
                     }
                     else
                     {
@@ -265,6 +267,55 @@ namespace FileVisualizer
             
             
             
+        }
+
+        private void sbbutton_Click(object sender, RoutedEventArgs e)
+        {
+
+            string sw = "";
+            var bits = CreateBitArray(filecontent);
+            double d = x / 8;
+            int newc = (int)Math.Floor(d);
+            int sl = 0;
+            int sl1 = 0;
+            for(int i =0;i!=bits.Length;i++)
+            {
+                
+                if(sl==8) 
+                {
+                    sw+=" ";
+                    sl= 0;
+                    sl1++;
+                }
+                if(sl1==newc)
+                {
+                    sw+="\n";
+                   
+                    sl1 = 0;
+                }
+                if (bits[i])
+                {
+                    sw+="1";
+                }
+                else
+                {
+                    sw+="0";
+                }
+                sl++;
+            }
+            
+            SaveFileDialog saveFileDialog = new SaveFileDialog();
+            saveFileDialog.Filter = "Text files (*.txt)|*.txt|All files (*.*)|*.*";
+            saveFileDialog.DefaultExt = "txt";
+            saveFileDialog.Title = "Save";
+            bool? result = saveFileDialog.ShowDialog();
+            if (result == true)
+            {
+
+                string filePath = saveFileDialog.FileName;
+                File.WriteAllText(filePath, sw.ToString());
+
+            }
         }
     }
 }
